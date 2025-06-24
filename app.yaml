@@ -1,0 +1,18 @@
+runtime: nodejs20
+service: strapi
+instance_class: F1
+
+liveness_check:
+  path: /api/health-check
+  check_interval_sec: 5
+  timeout_sec: 4
+  failure_threshold: 2
+  success_threshold: 2
+  initial_delay_sec: 10
+
+beta_settings:
+  cloud_sql_instances: mcp-box:us-east1:mcpbox
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 1

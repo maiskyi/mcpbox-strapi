@@ -1,0 +1,56 @@
+name: Deploy
+
+on:
+  push:
+    branches: main
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build application
+        run: yarn build
+
+      - name: Auth to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS_JSON }}
+
+      - name: Deploy to Google Cloud App Engine
+        uses: google-github-actions/deploy-appengine@v2
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          env_vars: |-
+            DATABASE_CLIENT=postgres
+            APP_KEYS=${{ secrets.STRAPI_APP_KEYS }}
+            API_TOKEN_SALT=${{ secrets.STRAPI_API_TOKEN_SALT }}
+            ADMIN_JWT_SECRET=${{ secrets.STRAPI_ADMIN_JWT_SECRET }}
+            TRANSFER_TOKEN_SALT=${{ secrets.STRAPI_TRANSFER_TOKEN_SALT }}
+            ENCRYPTION_KEY=${{ secrets.STRAPI_ENCRYPTION_KEY }}
+            JWT_SECRET=${{ secrets.STRAPI_JWT_SECRET }}
+            DATABASE_URL=${{ secrets.STRAPI_DATABASE_URL }}
+
+      - name: Remove Cloud App Engine versions
+        uses: Reviewable/appengine-remove-action@v2.1.2
+        with:
+          limit: 1
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          credentials: ${{ secrets.GCP_CREDENTIALS_JSON }}
