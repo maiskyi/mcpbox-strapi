@@ -14,7 +14,7 @@
     "upgrade": "npx @strapi/upgrade latest",
     "upgrade:dry": "npx @strapi/upgrade latest --dry",
     "docker": "docker-compose up -d",
-    "act": "act -j build --secret-file .env --env-file .env --var-file .env --container-architecture linux/amd64"
+    "act": "act -j deploy --secret-file .env --env-file .env --var-file .env --container-architecture linux/amd64"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.16.0",
