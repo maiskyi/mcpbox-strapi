@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "server_categories",
+  "info": {
+    "singularName": "server-category",
+    "pluralName": "server-categories",
+    "displayName": "Server Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title",
+      "required": true
+    }
+  }
+}
