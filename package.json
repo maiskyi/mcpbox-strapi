@@ -17,6 +17,7 @@
     "act": "act -j deploy --secret-file .env --env-file .env --var-file .env --container-architecture linux/amd64"
   },
   "dependencies": {
+    "@arshiash80/strapi-plugin-iconhub": "^1.0.2",
     "@strapi/plugin-cloud": "5.16.0",
     "@strapi/plugin-graphql": "^5.16.0",
     "@strapi/plugin-users-permissions": "5.16.0",

@@ -387,7 +387,7 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Description: Schema.Attribute.Text & Schema.Attribute.Required;
+    Description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'> &
       Schema.Attribute.Private;
@@ -472,6 +472,9 @@ export interface ApiServerCategoryServerCategory
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Icon: Schema.Attribute.JSON &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<'plugin::strapi-plugin-iconhub.iconhub'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -507,12 +510,14 @@ export interface ApiServerServer extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::server.server'
     > &
       Schema.Attribute.Private;
+    Logo: Schema.Attribute.Media<'images' | 'files'>;
     publishedAt: Schema.Attribute.DateTime;
     Slug: Schema.Attribute.UID<'Title'> & Schema.Attribute.Required;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
