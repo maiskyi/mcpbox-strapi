@@ -19,6 +19,14 @@
       "type": "text",
       "required": false
     },
+    "Logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
     "Slug": {
       "type": "uid",
       "targetField": "Title",

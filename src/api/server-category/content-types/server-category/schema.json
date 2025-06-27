@@ -20,6 +20,11 @@
       "type": "uid",
       "targetField": "Title",
       "required": true
+    },
+    "Icon": {
+      "type": "customField",
+      "customField": "plugin::strapi-plugin-iconhub.iconhub",
+      "required": true
     }
   }
 }
