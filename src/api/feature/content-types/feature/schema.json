@@ -15,6 +15,11 @@
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "ReleaseDate": {
+      "type": "date",
+      "required": true,
+      "default": "2025-09-01"
     }
   }
 }
