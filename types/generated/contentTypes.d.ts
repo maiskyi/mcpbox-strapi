@@ -514,6 +514,7 @@ export interface ApiServerServer extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Description: Schema.Attribute.Text;
+    GitHubUrl: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -521,6 +522,7 @@ export interface ApiServerServer extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     Logo: Schema.Attribute.Media<'images' | 'files'>;
+    Overview: Schema.Attribute.RichText;
     publishedAt: Schema.Attribute.DateTime;
     Slug: Schema.Attribute.UID<'Title'> & Schema.Attribute.Required;
     Title: Schema.Attribute.String & Schema.Attribute.Required;

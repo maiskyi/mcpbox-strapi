@@ -15,9 +15,16 @@
       "type": "string",
       "required": true
     },
+    "GitHubUrl": {
+      "type": "string",
+      "required": true
+    },
     "Description": {
       "type": "text",
       "required": false
+    },
+    "Overview": {
+      "type": "richtext"
     },
     "Logo": {
       "type": "media",
@@ -27,15 +34,15 @@
         "files"
       ]
     },
-    "Slug": {
-      "type": "uid",
-      "targetField": "Title",
-      "required": true
-    },
     "Category": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::server-category.server-category"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title",
+      "required": true
     }
   }
 }
