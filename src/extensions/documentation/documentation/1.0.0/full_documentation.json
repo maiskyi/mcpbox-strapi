@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-07-02T19:54:52.752Z"
+    "x-generation-date": "2025-07-04T10:12:50.245Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -5589,6 +5589,7 @@
           "data": {
             "required": [
               "Title",
+              "GitHubUrl",
               "Slug"
             ],
             "type": "object",
@@ -5596,7 +5597,13 @@
               "Title": {
                 "type": "string"
               },
+              "GitHubUrl": {
+                "type": "string"
+              },
               "Description": {
+                "type": "string"
+              },
+              "Overview": {
                 "type": "string"
               },
               "Logo": {
@@ -5610,9 +5617,6 @@
                 ],
                 "example": "string or id"
               },
-              "Slug": {
-                "type": "string"
-              },
               "Category": {
                 "oneOf": [
                   {
@@ -5623,6 +5627,9 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "Slug": {
+                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -5684,6 +5691,7 @@
         "type": "object",
         "required": [
           "Title",
+          "GitHubUrl",
           "Slug"
         ],
         "properties": {
@@ -5696,7 +5704,13 @@
           "Title": {
             "type": "string"
           },
+          "GitHubUrl": {
+            "type": "string"
+          },
           "Description": {
+            "type": "string"
+          },
+          "Overview": {
             "type": "string"
           },
           "Logo": {
@@ -6297,9 +6311,6 @@
               }
             }
           },
-          "Slug": {
-            "type": "string"
-          },
           "Category": {
             "type": "object",
             "properties": {
@@ -6369,6 +6380,9 @@
               }
             }
           },
+          "Slug": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -6420,7 +6434,13 @@
                 "Title": {
                   "type": "string"
                 },
+                "GitHubUrl": {
+                  "type": "string"
+                },
                 "Description": {
+                  "type": "string"
+                },
+                "Overview": {
                   "type": "string"
                 },
                 "Logo": {
@@ -6552,9 +6572,6 @@
                     }
                   }
                 },
-                "Slug": {
-                  "type": "string"
-                },
                 "Category": {
                   "type": "object",
                   "properties": {
@@ -6565,6 +6582,9 @@
                       "type": "string"
                     }
                   }
+                },
+                "Slug": {
+                  "type": "string"
                 },
                 "createdAt": {
                   "type": "string",
