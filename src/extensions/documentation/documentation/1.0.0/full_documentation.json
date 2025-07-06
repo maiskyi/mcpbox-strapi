@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-07-04T10:12:50.245Z"
+    "x-generation-date": "2025-07-06T15:28:46.081Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -5589,19 +5589,31 @@
           "data": {
             "required": [
               "Title",
+              "Slug",
+              "Description",
               "GitHubUrl",
-              "Slug"
+              "GitHubOwner",
+              "IsOfficial"
             ],
             "type": "object",
             "properties": {
               "Title": {
                 "type": "string"
               },
-              "GitHubUrl": {
+              "Slug": {
                 "type": "string"
               },
               "Description": {
                 "type": "string"
+              },
+              "GitHubUrl": {
+                "type": "string"
+              },
+              "GitHubOwner": {
+                "type": "string"
+              },
+              "IsOfficial": {
+                "type": "boolean"
               },
               "Overview": {
                 "type": "string"
@@ -5627,9 +5639,6 @@
                   }
                 ],
                 "example": "string or id"
-              },
-              "Slug": {
-                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -5691,8 +5700,11 @@
         "type": "object",
         "required": [
           "Title",
+          "Slug",
+          "Description",
           "GitHubUrl",
-          "Slug"
+          "GitHubOwner",
+          "IsOfficial"
         ],
         "properties": {
           "id": {
@@ -5704,11 +5716,20 @@
           "Title": {
             "type": "string"
           },
-          "GitHubUrl": {
+          "Slug": {
             "type": "string"
           },
           "Description": {
             "type": "string"
+          },
+          "GitHubUrl": {
+            "type": "string"
+          },
+          "GitHubOwner": {
+            "type": "string"
+          },
+          "IsOfficial": {
+            "type": "boolean"
           },
           "Overview": {
             "type": "string"
@@ -6380,9 +6401,6 @@
               }
             }
           },
-          "Slug": {
-            "type": "string"
-          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -6434,11 +6452,20 @@
                 "Title": {
                   "type": "string"
                 },
-                "GitHubUrl": {
+                "Slug": {
                   "type": "string"
                 },
                 "Description": {
                   "type": "string"
+                },
+                "GitHubUrl": {
+                  "type": "string"
+                },
+                "GitHubOwner": {
+                  "type": "string"
+                },
+                "IsOfficial": {
+                  "type": "boolean"
                 },
                 "Overview": {
                   "type": "string"
@@ -6582,9 +6609,6 @@
                       "type": "string"
                     }
                   }
-                },
-                "Slug": {
-                  "type": "string"
                 },
                 "createdAt": {
                   "type": "string",
