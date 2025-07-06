@@ -15,13 +15,27 @@
       "type": "string",
       "required": true
     },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title",
+      "required": true
+    },
+    "Description": {
+      "type": "richtext",
+      "required": true
+    },
     "GitHubUrl": {
       "type": "string",
       "required": true
     },
-    "Description": {
-      "type": "text",
-      "required": false
+    "GitHubOwner": {
+      "type": "string",
+      "required": true
+    },
+    "IsOfficial": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     },
     "Overview": {
       "type": "richtext"
@@ -38,11 +52,6 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::server-category.server-category"
-    },
-    "Slug": {
-      "type": "uid",
-      "targetField": "Title",
-      "required": true
     }
   }
 }

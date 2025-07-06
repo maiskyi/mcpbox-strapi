@@ -513,8 +513,12 @@ export interface ApiServerServer extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Description: Schema.Attribute.Text;
+    Description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    GitHubOwner: Schema.Attribute.String & Schema.Attribute.Required;
     GitHubUrl: Schema.Attribute.String & Schema.Attribute.Required;
+    IsOfficial: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
