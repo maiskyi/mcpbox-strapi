@@ -52,6 +52,14 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::server-category.server-category"
+    },
+    "Tools": {
+      "type": "json",
+      "required": true
+    },
+    "Settings": {
+      "type": "json",
+      "required": true
     }
   }
 }

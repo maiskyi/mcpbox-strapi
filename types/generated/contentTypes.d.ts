@@ -528,8 +528,10 @@ export interface ApiServerServer extends Struct.CollectionTypeSchema {
     Logo: Schema.Attribute.Media<'images' | 'files'>;
     Overview: Schema.Attribute.RichText;
     publishedAt: Schema.Attribute.DateTime;
+    Settings: Schema.Attribute.JSON & Schema.Attribute.Required;
     Slug: Schema.Attribute.UID<'Title'> & Schema.Attribute.Required;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
+    Tools: Schema.Attribute.JSON & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
