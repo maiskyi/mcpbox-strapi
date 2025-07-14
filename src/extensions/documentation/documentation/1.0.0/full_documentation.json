@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-07-06T15:28:46.081Z"
+    "x-generation-date": "2025-07-14T23:07:34.376Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -5593,7 +5593,9 @@
               "Description",
               "GitHubUrl",
               "GitHubOwner",
-              "IsOfficial"
+              "IsOfficial",
+              "Tools",
+              "Settings"
             ],
             "type": "object",
             "properties": {
@@ -5640,6 +5642,8 @@
                 ],
                 "example": "string or id"
               },
+              "Tools": {},
+              "Settings": {},
               "locale": {
                 "type": "string"
               },
@@ -5704,7 +5708,9 @@
           "Description",
           "GitHubUrl",
           "GitHubOwner",
-          "IsOfficial"
+          "IsOfficial",
+          "Tools",
+          "Settings"
         ],
         "properties": {
           "id": {
@@ -6401,6 +6407,8 @@
               }
             }
           },
+          "Tools": {},
+          "Settings": {},
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -6610,6 +6618,8 @@
                     }
                   }
                 },
+                "Tools": {},
+                "Settings": {},
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
