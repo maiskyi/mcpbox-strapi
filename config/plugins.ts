@@ -6,9 +6,9 @@ export default ({ env }) => ({
         bucketName: env("GCP_STORAGE_BUCKET_NAME"),
         publicFiles: true,
         serviceAccount: (() => {
-          if (env("GCP_SERVICE_ACCOUNT_BASE64")) {
+          if (env("GCP_STORAGE_SERVICE_ACCOUNT_BASE64")) {
             return JSON.parse(
-              Buffer.from(env("GCP_SERVICE_ACCOUNT_BASE64"), "base64").toString(
+              Buffer.from(env("GCP_STORAGE_SERVICE_ACCOUNT_BASE64"), "base64").toString(
                 "utf8"
               )
             );
