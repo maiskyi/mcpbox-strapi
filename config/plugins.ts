@@ -7,7 +7,12 @@ export default ({ env }) => {
         providerOptions: {
           bucketName: env("GCP_STORAGE_BUCKET_NAME"),
           publicFiles: true,
-          serviceAccount: env.json("GCP_STORAGE_SERVICE_ACCOUNT"),
+          serviceAccount: JSON.parse(
+            Buffer.from(
+              env("GCP_STORAGE_SERVICE_ACCOUNT_BASE64"),
+              "base64"
+            ).toString("utf-8")
+          ),
         },
       },
     },
