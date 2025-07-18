@@ -475,6 +475,7 @@ export interface ApiServerCategoryServerCategory
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Default: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     Icon: Schema.Attribute.JSON &
       Schema.Attribute.Required &
       Schema.Attribute.CustomField<'plugin::strapi-plugin-iconhub.iconhub'>;
@@ -525,7 +526,7 @@ export interface ApiServerServer extends Struct.CollectionTypeSchema {
       'api::server.server'
     > &
       Schema.Attribute.Private;
-    Logo: Schema.Attribute.Media<'images' | 'files'>;
+    Logo: Schema.Attribute.Media<'images'>;
     Overview: Schema.Attribute.RichText;
     publishedAt: Schema.Attribute.DateTime;
     Settings: Schema.Attribute.JSON & Schema.Attribute.Required;
