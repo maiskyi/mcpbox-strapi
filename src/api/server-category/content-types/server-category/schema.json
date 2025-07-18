@@ -25,6 +25,10 @@
       "type": "customField",
       "customField": "plugin::strapi-plugin-iconhub.iconhub",
       "required": true
+    },
+    "Default": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
