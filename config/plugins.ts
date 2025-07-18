@@ -5,12 +5,15 @@ export default ({ env }) => ({
       providerOptions: {
         bucketName: env("GCP_STORAGE_BUCKET_NAME"),
         publicFiles: true,
-        serviceAccount: JSON.parse(
-          Buffer.from(
-            env("GCP_STORAGE_SERVICE_ACCOUNT_BASE64"),
-            "base64"
-          ).toString("utf-8")
-        ),
+        serviceAccount: env("GCP_SERVICE_ACCOUNT_BASE64")
+          ? JSON.parse(
+              Buffer.from(env("GCP_SERVICE_ACCOUNT_BASE64"), "base64").toString(
+                "utf8"
+              )
+            )
+          : (() => {
+              throw new Error("GCP_SERVICE_ACCOUNT_BASE64 is not defined");
+            })(),
       },
     },
   },
