@@ -24,14 +24,6 @@
       "type": "richtext",
       "required": true
     },
-    "GitHubUrl": {
-      "type": "string",
-      "required": true
-    },
-    "GitHubOwner": {
-      "type": "string",
-      "required": true
-    },
     "IsOfficial": {
       "type": "boolean",
       "required": true,
@@ -58,6 +50,28 @@
     },
     "Settings": {
       "type": "json",
+      "required": true
+    },
+    "Homepage": {
+      "type": "string",
+      "required": true
+    },
+    "GitHubUrl": {
+      "type": "string",
+      "required": true
+    },
+    "GitHubOwner": {
+      "type": "string",
+      "required": true
+    },
+    "GitHubLicense": {
+      "type": "string"
+    },
+    "GitHubLanguage": {
+      "type": "string"
+    },
+    "GitHubPublishedAt": {
+      "type": "datetime",
       "required": true
     }
   }

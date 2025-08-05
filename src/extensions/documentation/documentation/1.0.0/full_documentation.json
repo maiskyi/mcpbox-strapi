@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-07-28T21:01:46.314Z"
+    "x-generation-date": "2025-08-05T16:05:34.090Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -5591,11 +5591,13 @@
               "Title",
               "Slug",
               "Description",
-              "GitHubUrl",
-              "GitHubOwner",
               "IsOfficial",
               "Tools",
-              "Settings"
+              "Settings",
+              "Homepage",
+              "GitHubUrl",
+              "GitHubOwner",
+              "GitHubPublishedAt"
             ],
             "type": "object",
             "properties": {
@@ -5606,12 +5608,6 @@
                 "type": "string"
               },
               "Description": {
-                "type": "string"
-              },
-              "GitHubUrl": {
-                "type": "string"
-              },
-              "GitHubOwner": {
                 "type": "string"
               },
               "IsOfficial": {
@@ -5644,6 +5640,25 @@
               },
               "Tools": {},
               "Settings": {},
+              "Homepage": {
+                "type": "string"
+              },
+              "GitHubUrl": {
+                "type": "string"
+              },
+              "GitHubOwner": {
+                "type": "string"
+              },
+              "GitHubLicense": {
+                "type": "string"
+              },
+              "GitHubLanguage": {
+                "type": "string"
+              },
+              "GitHubPublishedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
               "locale": {
                 "type": "string"
               },
@@ -5706,11 +5721,13 @@
           "Title",
           "Slug",
           "Description",
-          "GitHubUrl",
-          "GitHubOwner",
           "IsOfficial",
           "Tools",
-          "Settings"
+          "Settings",
+          "Homepage",
+          "GitHubUrl",
+          "GitHubOwner",
+          "GitHubPublishedAt"
         ],
         "properties": {
           "id": {
@@ -5726,12 +5743,6 @@
             "type": "string"
           },
           "Description": {
-            "type": "string"
-          },
-          "GitHubUrl": {
-            "type": "string"
-          },
-          "GitHubOwner": {
             "type": "string"
           },
           "IsOfficial": {
@@ -6412,6 +6423,25 @@
           },
           "Tools": {},
           "Settings": {},
+          "Homepage": {
+            "type": "string"
+          },
+          "GitHubUrl": {
+            "type": "string"
+          },
+          "GitHubOwner": {
+            "type": "string"
+          },
+          "GitHubLicense": {
+            "type": "string"
+          },
+          "GitHubLanguage": {
+            "type": "string"
+          },
+          "GitHubPublishedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -6467,12 +6497,6 @@
                   "type": "string"
                 },
                 "Description": {
-                  "type": "string"
-                },
-                "GitHubUrl": {
-                  "type": "string"
-                },
-                "GitHubOwner": {
                   "type": "string"
                 },
                 "IsOfficial": {
@@ -6623,6 +6647,25 @@
                 },
                 "Tools": {},
                 "Settings": {},
+                "Homepage": {
+                  "type": "string"
+                },
+                "GitHubUrl": {
+                  "type": "string"
+                },
+                "GitHubOwner": {
+                  "type": "string"
+                },
+                "GitHubLicense": {
+                  "type": "string"
+                },
+                "GitHubLanguage": {
+                  "type": "string"
+                },
+                "GitHubPublishedAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
