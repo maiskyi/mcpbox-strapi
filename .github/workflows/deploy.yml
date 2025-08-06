@@ -38,6 +38,7 @@ jobs:
           credentials_json: ${{ secrets.GCP_CREDENTIALS_JSON }}
 
       - name: Deploy to Google Cloud App Engine
+        id: deploy
         uses: google-github-actions/deploy-appengine@v2
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
@@ -59,3 +60,7 @@ jobs:
           limit: 1
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           credentials: ${{ secrets.GCP_CREDENTIALS_JSON }}
+
+      - name: Start service
+        run: curl ${{ steps.deploy.outputs.version_url }}
+          
