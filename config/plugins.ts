@@ -1,4 +1,14 @@
 export default ({ env }) => ({
+  meilisearch: {
+    config: {
+      server: {
+        settings: {
+          filterableAttributes: ['Category.Slug'],
+          searchableAttributes: ['Title', 'Description'],
+        },
+      },
+    },
+  },
   upload: {
     config: {
       provider: "@strapi-community/strapi-provider-upload-google-cloud-storage",

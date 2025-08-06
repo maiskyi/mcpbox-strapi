@@ -24,10 +24,13 @@ jobs:
           cache: "yarn"
 
       - name: Install dependencies
-        run: yarn
+        run: yarn install --frozen-lockfile
 
       - name: Build application
         run: yarn build
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --production
 
       - name: Auth to Google Cloud
         uses: google-github-actions/auth@v2
