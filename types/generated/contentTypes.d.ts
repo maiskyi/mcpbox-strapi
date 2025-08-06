@@ -432,6 +432,36 @@ export interface ApiFeatureFeature extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiLogLog extends Struct.CollectionTypeSchema {
+  collectionName: 'logs';
+  info: {
+    displayName: 'Log';
+    pluralName: 'logs';
+    singularName: 'log';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Error: Schema.Attribute.JSON & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::log.log'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    Type: Schema.Attribute.Enumeration<
+      ['HandleOnMcpFileCreatedUpdatedFailed']
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Struct.CollectionTypeSchema {
   collectionName: 'pages';
   info: {
@@ -1082,6 +1112,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::faq.faq': ApiFaqFaq;
       'api::feature.feature': ApiFeatureFeature;
+      'api::log.log': ApiLogLog;
       'api::page.page': ApiPagePage;
       'api::server-category.server-category': ApiServerCategoryServerCategory;
       'api::server.server': ApiServerServer;

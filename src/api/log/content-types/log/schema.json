@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "logs",
+  "info": {
+    "singularName": "log",
+    "pluralName": "logs",
+    "displayName": "Log"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Type": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "HandleOnMcpFileCreatedUpdatedFailed"
+      ]
+    },
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Error": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
